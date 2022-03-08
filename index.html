@@ -69,15 +69,76 @@
                 </script>
               </select>
             </div>
+
             <div class="col">
-              <!-- DATA -->
-              <label class="form-label my-2 fw-bold">Data</label>
-              <input type="date" class="data-tag form-control" name="data[Data]" />
-              <script>
-                /* let d = document.getElementsByTagName('data[Data]'); */
-                let d = document.getElementsByClassName('data-tag');
-                console.log(d.value);
-              </script>
+              <div class="row">
+                <div class="col">
+                  <!-- DIA -->
+                  <label class="form-label my-2 fw-bold">Dia</label>
+                  <select
+                    class="frm-sel-sm form-select"
+                    aria-label="Default select example"
+                    id="cmpDia"
+                    name="data[Dia]"
+                  >
+                    <script>
+                      for (let i = 1; i <= 31; i++) {
+                        document.getElementById("cmpDia").innerHTML +=
+                          '<option value="' + i + '">' + i + "</option>";
+                      }
+                    </script>
+                  </select>
+                </div>
+                <div class="col">
+                  <!-- MES -->
+                  <label class="form-label my-2 fw-bold">Mês</label>
+                  <select
+                    class="frm-sel-sm form-select"
+                    aria-label="Default select example"
+                    id="cmpMes"
+                    name="data[Mês]"
+                  >
+                    <script>
+                      let mes = [
+                        "janeiro",
+                        "fevereiro",
+                        "março",
+                        "abril",
+                        "maio",
+                        "junho",
+                        "julho",
+                        "agosto",
+                        "setembro",
+                        "outubro",
+                        "novembro",
+                        "dezembro",
+                      ];
+                      mes.map((i) => {
+                        document.getElementById("cmpMes").innerHTML +=
+                          '<option value="' + i + '">' + i + "</option>";
+                      });
+                    </script>
+                  </select>
+                </div>
+                <div class="col">
+                  <!-- ANO -->
+                  <label class="form-label my-2 fw-bold">Ano</label>
+                  <select
+                    class="frm-sel-sm form-select"
+                    aria-label="Default select example"
+                    id="cmpAno"
+                    name="data[Ano]"
+                  >
+                    <script>
+                      for (let i = 2000; i <= 2050; i++) {
+                        document.getElementById("cmpAno").innerHTML +=
+                          '<option value="' + i + '">' + i + "</option>";
+                      }
+                    </script>
+                  </select>
+                </div>
+                <!-- <input type="date" class="data-tag form-control" name="data[Data]" /> -->
+              </div>
             </div>
           </section>
 
